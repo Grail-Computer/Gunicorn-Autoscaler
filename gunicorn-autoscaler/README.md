@@ -1,6 +1,6 @@
-# gunicorn-autoscaler (formerly gunipilot)
+# Gunicorn-autoscaler
 
-**gunicorn-autoscaler** is a lightweight Rust wrapper for Gunicorn that provides **autoscaling** capabilities for Python web applications (FastAPI, Django, Flask).
+**gunicorn-autoscaler** is a lightweight Rust wrapper for Gunicorn that provides **autoscaling** capabilities for FastAPI web applications.
 
 It manages Gunicorn processes and listens to StatsD metrics to dynamicially add or remove workers based on real-time request pressure, without needing a full redeploy or complex orchestrator rules.
 
@@ -77,4 +77,27 @@ async def metrics_middleware(request: Request, call_next):
         pass
 
     return response
+```
+
+## Development & Testing
+
+This repository includes a Docker-based integration test suite to verify autoscaling behavior (burst up and idle down).
+
+### Prerequisites
+
+- Docker
+- Python 3 + `uv`
+
+### Running Tests
+
+The test runner builds the container, runs both "burst" and "idle" scenarios, and verifies log output.
+
+```bash
+# Create venv and install dependency
+uv venv
+source .venv/bin/activate
+uv pip install httpx
+
+# Run full suite
+python3 tests/run_tests.py
 ```

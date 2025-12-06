@@ -1,10 +1,10 @@
 [package]
 name = "gunicorn-autoscaler"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 license = "MIT"
 description = "Gunicorn autoscaling wrapper (dynamic workers via StatsD + TTIN/TTOU)"
-repository = "https://github.com/yourusername/gunicorn-autoscaler"
+repository = "https://github.com/Grail-Computer/Gunicorn-Autoscaler.git"
 keywords = ["gunicorn", "autoscaling", "fastapi", "uvicorn", "ops"]
 categories = ["command-line-utilities", "web-programming::http-server"]
 readme = "README.md"
